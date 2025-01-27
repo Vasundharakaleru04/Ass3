@@ -45,23 +45,70 @@
 //document.body.appendChild(image);
 
 
-let from = document.querySelector("form");
-let username = document.getElementById("uName");
-let mail =document.getElementById("uMail");
-let psw =document.getElementById("uPass");
-from.addEventListener("submit", (event)=>{
-  event.preventDefault();
+//let from = document.querySelector("form");
+//let username = document.getElementById("uName");
+//let mail =document.getElementById("uMail");
+//let psw =document.getElementById("uPass");
+//from.addEventListener("submit", (event)=>{
+ // event.preventDefault();
 
 
 
-  let uname = username.value;
-  let uemail = mail.value;
-  let upass = psw.value;
-  let userdetails ={
-    uname, uemail, upass
-  }
-  console.log(userdetails);
-  localStorage.setItem("userData", JSON.stringify(userdetails))
-})
+  //let uname = username.value;
+//  let uemail = mail.value;
+//  let upass = psw.value;
+//  let userdetails ={
+ //   uname, uemail, upass
+ // }
+  //console.log(userdetails);
+  //localStorage.setItem("userData", JSON.stringify(userdetails))
+//})
+
+// !
+let mainEle = document.createElement("div");
+mainEle.setAttribute("id","mainBlock");
+mainEle.style.border="2px wine red";
+mainEle.style.width="full screen";
+mainEle.style.height="full screen";
+
+console.log(mainEle);
+
+
+let topEle = document.createElement("div");
+topEle.setAttribute("class","topblock");
+
+let image = document.createElement("img");
+image.src ="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+image.style.width="full screen"
+
+let bottomEle = document.createElement("div");
+bottomEle.setAttribute("class","bottomBlock");
+
+
+let h1= document.createElement("h1");
+h1.innerText = "Nature Water Lakes";
+h1.style.border=" 10px wine red";
+h1.style.textAlign="center";
+
+//console.log(h1);
+
+let btn = document.createElement("button");
+btn.innerText="View more";
+btn.style.border="none";
+btn.style.padding="25px"
+
+//nsole.log(button);
+bottomEle.appendChild(h1);
+bottomEle.appendChild(btn);
+topEle.appendChild(image);
+mainEle.appendChild(topEle);
+mainEle.appendChild(bottomEle);
+
+document.body.appendChild(mainEle);
+
+
+
+
+
 
 
