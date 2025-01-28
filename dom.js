@@ -64,51 +64,106 @@
   //localStorage.setItem("userData", JSON.stringify(userdetails))
 //})
 
-// !
-let mainEle = document.createElement("div");
-mainEle.setAttribute("id","mainBlock");
-mainEle.style.border="2px wine red";
-mainEle.style.width="full screen";
-mainEle.style.height="full screen";
+// // !burger
+// let Image = document.createElement("img");
+// Image.src ="./burger.jpeg";
+// Image.style.width="full screen"
 
-console.log(mainEle);
+// document.body.appendChild(Image);
 
 
-let topEle = document.createElement("div");
-topEle.setAttribute("class","topblock");
+// //! Image
 
-let image = document.createElement("img");
-image.src ="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
-image.style.width="full screen"
+// let mainEle = document.createElement("div");
+// mainEle.setAttribute("id","mainBlock");
+// mainEle.style.border="2px wine red";
+// mainEle.style.width="full screen";
+// mainEle.style.height="full screen";
 
-let bottomEle = document.createElement("div");
-bottomEle.setAttribute("class","bottomBlock");
-
-
-let h1= document.createElement("h1");
-h1.innerText = "Nature Water Lakes";
-h1.style.border=" 10px wine red";
-h1.style.textAlign="center";
-
-//console.log(h1);
-
-let btn = document.createElement("button");
-btn.innerText="View more";
-btn.style.border="none";
-btn.style.padding="25px"
-
-//nsole.log(button);
-bottomEle.appendChild(h1);
-bottomEle.appendChild(btn);
-topEle.appendChild(image);
-mainEle.appendChild(topEle);
-mainEle.appendChild(bottomEle);
-
-document.body.appendChild(mainEle);
+// console.log(mainEle);
 
 
+// let topEle = document.createElement("div");
+// topEle.setAttribute("class","topblock");
+
+// let image = document.createElement("img");
+// image.src ="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+// image.style.width="full screen"
+
+// let bottomEle = document.createElement("div");
+// bottomEle.setAttribute("class","bottomBlock");
 
 
+// let h1= document.createElement("h1");
+// h1.innerText = "Nature Water Lakes";
+// h1.style.border=" 10px wine red";
+// h1.style.textAlign="center";
 
+// //console.log(h1);
 
+// let btn = document.createElement("button");
+// btn.innerText="View more";
+// btn.style.border="none";
+// btn.style.padding="25px"
 
+// //nsole.log(button);
+// bottomEle.appendChild(h1);
+// bottomEle.appendChild(btn);
+// topEle.appendChild(image);
+// mainEle.appendChild(topEle);
+// mainEle.appendChild(bottomEle);
+
+// document.body.appendChild(mainEle);
+
+//!
+ let form = document.querySelector("form");
+
+ let username = document.getElementById("uName");
+ let password = document.getElementById("uPass");
+ let check = document.getElementById("check");
+ let show = document.getElementById("show");
+let gender = document.getElementsByClassName("gender");
+//  console.log(gender);
+//! 
+check.addEventListener("click",event=>{
+  //console.log(event.target.checked);
+  if(event.target.checked == true){
+    password.setAttribute("type" , "text");
+    show.innerText = "Hide password";
+
+  }else{
+    password.setAttribute("type" , "password");
+    show.innerText = "show password";
+
+  }
+})
+
+ form.addEventListener("submit", event=>{
+  event.preventDefault();
+  let un = username.value;
+  let up = password.value;
+  let gen = "";
+
+  for (let i=0; i<=gender.length-1;i++){
+    //console.log(gender[i].value);
+    //console.log(gender[i].checked);
+      if(genger[i].checked == true){
+      gen = gender[i].value
+      }
+    
+  }
+  let userDetails={
+    username:un,
+    password:up,
+    gender:gen
+
+  }
+  console.log(userDetails);
+  sessionStorage.setItem("userData" , 
+    JSON.stringify(userDetails))
+
+  
+
+    }  )
+    
+    
